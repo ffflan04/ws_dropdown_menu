@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body { /* やっぱり、メインキャンバスの親要素は用意するよね。*/
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.menuBar {
+    background-color: #5599c7;
+    text-align: center;
+}
+.menuBar ul li {
+    display: inline-block; /* ulの子要素を、横並びにするのに、インライン要素にするという選択肢もある */
+    width: 120px; /* インライン要素にすることで、widthの設定で、隣接してる要素の余白を設定できる */
+    margin: 0 35px;
+    padding: 25px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.menuBar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.active,
+.menuBar ul li:hover { /* hoverの発火条件は、子要素以下までに及ぶ */
+    /* つまり、menuBar ul li 以下の子要素にマウスオーバーした場合でも、このhoverは発火する */
+    background-color: #73b5e0;
+}
+
+.subMenu-1 {
+    position: absolute;
+    background-color: #5599c7;
+    margin-top: 25px; /* 多分、親要素がpxで指定されてるから、相対値も、pxで指定してちょうどあうと思う。*/
+    display: none;
+}
+.subMenu-2 {
+    position: absolute;
+    background-color: #5599c7;
+    margin-top: 25px;
+    display: none;
+}
+.subMenu-3 {
+    position: absolute;
+    background-color: #5599c7;
+    margin-top: 25px;
+    display: none;
+}
+.subMenu-4 {
+    position: absolute;
+    background-color: #5599c7;
+    margin-top: 25px;
+    display: none;
+}
+.menuBar ul li:hover .subMenu-1 {
+    display: block;
+}
+.menuBar ul li:hover .subMenu-2 {
+    display: block;
+}
+.menuBar ul li:hover .subMenu-3 {
+    display: block;
+}
+.menuBar ul li:hover .subMenu-4 {
+    display: block;
+}
+
+.subMenu-1 ul li {
+    display: block; /* 多分、元々、ブロック要素だったものを、インライン要素からブロック要素に戻すんだって。*/
+    border-bottom: 1px dotted white;
+}
+.subMenu-1 ul li:last-child { /* ulタグの特定の<li>タグのcssを指定できます。*/
+    border: none;
+}
+.subMenu-2 ul li {
+    display: block;
+    border-bottom: 1px dotted white;
+}
+.subMenu-2 ul li:last-child {
+    border: none;
+}
+.subMenu-3 ul li {
+    display: block;
+    border-bottom: 1px dotted white;
+}
+.subMenu-3 ul li:last-child {
+    border: none;
+}
+.subMenu-4 ul li {
+    display: block;
+    border-bottom: 1px dotted white;
+}
+.subMenu-4 ul li:last-child {
+    border: none;
+}
